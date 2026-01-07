@@ -2,8 +2,8 @@
 
 # Extract all mrpack files before committing with unzip
 for mrpack in $(find . -name "*.mrpack"); do
-    dir=$(dirname "$mrpack")
-    unzip -o "$mrpack" -d "$dir"
+    dir=$(basename "$mrpack" .mrpack)
+    unzip -o "$mrpack" -d "./$dir"
     chmod -R +rw "$dir"
     git add "$dir"
 done
