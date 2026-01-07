@@ -7,7 +7,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: MODRINTH
-      MODRINTH_MODPACK: /modpack.mrpack
+      MODRINTH_MODPACK: /server.mrpack
       MEMORY: 6G
 
       ENABLE_RCON: "true"
@@ -16,7 +16,7 @@ services:
 
     volumes:
       - ./data:/data
-      - ./server/modpack.mrpack:/modpack.mrpack:ro
+      - ./server.mrpack:/server.mrpack:ro
     ports:
       - "25565:25565/tcp"
       - "24454:24454/udp"
