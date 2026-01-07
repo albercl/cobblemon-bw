@@ -48,7 +48,7 @@ mouseSensitivity:0.5
 damageTiltStrength:1.0
 highContrast:false
 narratorHotkey:true
-resourcePacks:["vanilla","fabric","cobbreeding:pasturefix","betterbeds:fancyconnectedbeds","cobblemon:gyaradosjump","cobblemon:regionbiasforms","cobblemon:uniqueshinyforms","continuity:default","continuity:glass_pane_culling_fix","file/E19 Cobblemon Minimap Icons.zip","file/EeveelutionsReimagined.zip","file/RCT Trainers+ [1.6] v2.1.zip","mega_showdown:gyaradosjumpingmega","mega_showdown:regionbiasmsd"]
+resourcePacks:["vanilla","fabric","cobbreeding:pasturefix","betterbeds:fancyconnectedbeds","cobblemon:gyaradosjump","cobblemon:regionbiasforms","cobblemon:uniqueshinyforms","continuity:default","continuity:glass_pane_culling_fix","file/E19 Cobblemon Minimap Icons.zip","file/EeveelutionsReimagined.zip","file/RCT Trainers+ [1.6] v2.1.zip","mega_showdown:gyaradosjumpingmega","mega_showdown:regionbiasmsd","file/ATM x MSD [3.1.2].zip","file/CavsCobblemon1.4.zip","file/MissingMon_v3.6 [1.7 Compatible Update ].zip","file/MundialMons.1.3.2V.[BUGS AND FIX].zip","file/MysticMons_v3.2.1.zip","file/pokemans_v15_toxicCloud.zip"]
 incompatibleResourcePacks:["appleskin","balm","crafttweaker","jade","jei","sophisticatedbackpacks","sophisticatedcore","sophisticatedstorage","waystones","xaerolib","xaerominimap","xaeroworldmap","yet_another_config_lib_v3"]
 lastServer:
 lang:en_us
