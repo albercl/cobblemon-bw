@@ -531,6 +531,21 @@
       "fileSize": 381101
     },
     {
+      "path": "mods/Chunky-Fabric-1.4.23.jar",
+      "hashes": {
+        "sha512": "02ca6af1ed31e9ebc51af20948a2afb670fe653c80aaeb990947caf6b655d6ab8eda3f1b64ef478633b67ef5d2fd0d1fe67e2107a4a522ef45fd1f183c9a6c9c",
+        "sha1": "6c8098fc0f124c7b6492de60db0108747f7f9821"
+      },
+      "env": {
+        "server": "required",
+        "client": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/fALzjamp/versions/RVFHfo1D/Chunky-Fabric-1.4.23.jar"
+      ],
+      "fileSize": 342979
+    },
+    {
       "path": "mods/easyauth-mc1.21-3.4.1.jar",
       "hashes": {
         "sha1": "e6d0932e5aa526a6d4e2ab9d90051d4a300a7368",
