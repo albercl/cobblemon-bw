@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Extract all mrpack files before committing with unzip
+for mrpack in $(find . -name "*.mrpack"); do
+    dir=$(dirname "$mrpack")
+    unzip -o "$mrpack" -d "$dir"
+done

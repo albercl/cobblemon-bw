@@ -1,0 +1,53 @@
+services:
+  server:
+    image: itzg/minecraft-server:java21-alpine
+    pull_policy: daily
+    tty: true
+    stdin_open: true
+    environment:
+      EULA: "TRUE"
+      TYPE: MODRINTH
+      MODRINTH_MODPACK: /modpack.mrpack
+      MEMORY: 8G
+
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
+      RCON_PORT: 25575
+
+    volumes:
+      - ./data:/data
+      - ./server/modpack.mrpack:/modpack.mrpack:ro
+    ports:
+      - "25565:25565/tcp"
+      - "24454:24454/udp"
+
+  backup:
+    image: itzg/mc-backup
+    depends_on:
+      - server
+    environment:
+      # Programación del backup (cron)
+      BACKUP_INTERVAL: "48h"
+      BACKUP_METHOD: "tar"
+      INITIAL_DELAY: 0
+      BACKUP_ON_STARTUP: "true"
+
+      # RCON
+      RCON_HOST: server
+      RCON_PORT: 25575
+      RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
+
+      # Retención (opcional)
+      PRUNE_BACKUPS_DAYS: 14
+
+      POST_BACKUP_SCRIPT_FILE: /post-backup.sh
+
+      SSH_USER: albercl
+      SSH_HOST: nas.albercl.dev
+      SSH_PATH: /home/backups/cobblemon-bw
+
+    volumes:
+      - ./data:/data:ro
+      - ~/.ssh/id_ed25519:/root/.ssh/id_ed25519:ro
+      - ./post-backup.sh:/post-backup.sh:ro
+    restart: unless-stopped
