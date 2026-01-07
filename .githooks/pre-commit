@@ -4,4 +4,6 @@
 for mrpack in $(find . -name "*.mrpack"); do
     dir=$(dirname "$mrpack")
     unzip -o "$mrpack" -d "$dir"
+    chmod -R +rw "$dir"
+    git add "$dir"
 done
