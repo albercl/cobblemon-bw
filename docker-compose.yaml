@@ -6,12 +6,11 @@ services:
     stdin_open: true
     environment:
       EULA: "TRUE"
-      ONLINE_MODE: "false"
       MOTD: "§2§lCobblemon §a§lBlack & White §r§7"
 
       TYPE: MODRINTH
       MODRINTH_MODPACK: /server.mrpack
-      MEMORY: 6G
+      MEMORY: 5G
 
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
@@ -32,8 +31,6 @@ services:
       # Programación del backup (cron)
       BACKUP_INTERVAL: "48h"
       BACKUP_METHOD: "tar"
-      INITIAL_DELAY: 0
-      BACKUP_ON_STARTUP: "true"
 
       # RCON
       RCON_HOST: server
