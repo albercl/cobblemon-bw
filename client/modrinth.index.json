@@ -681,21 +681,6 @@
       "fileSize": 1297761
     },
     {
-      "path": "mods/cobblemon-ui-tweaks-1.0.7.jar",
-      "hashes": {
-        "sha1": "2e3a4b211b03dde7b6329bbbea693f362839f6de",
-        "sha512": "ae909a50dade03f68618156baffff6ede8999568147208752365476a54de5811ae8e87b5c488734926372df42d33db04d40a0ef0557062eda779cd1d08a3a486"
-      },
-      "env": {
-        "server": "required",
-        "client": "required"
-      },
-      "downloads": [
-        "https://cdn.modrinth.com/data/5WwmqQHF/versions/wgLbAKJk/cobblemon-ui-tweaks-1.0.7.jar"
-      ],
-      "fileSize": 64439
-    },
-    {
       "path": "mods/CobbleFurnies-fabric-1.0.jar",
       "hashes": {
         "sha512": "4483dc13e3d441172f3225204982d718cf41f2a3a43819b251f50dd1b6b04b9ecc27dede19c770528c7a01413f052b72460dc603b6ce1ce31474fd130f7bf0d2",

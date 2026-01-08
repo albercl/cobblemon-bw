@@ -6,11 +6,11 @@ services:
     stdin_open: true
     environment:
       EULA: "TRUE"
-      MOTD: "§2§lCobblemon §a§lBlack & White §r§7"
+      MOTD: "§e§l§oPokémon §8§lBlack §r§f& §f§lWhite §r§7"
 
       TYPE: MODRINTH
       MODRINTH_MODPACK: /server.mrpack
-      MEMORY: 5G
+      MEMORY: 5500M
 
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
