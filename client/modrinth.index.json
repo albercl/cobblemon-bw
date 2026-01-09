@@ -1264,6 +1264,21 @@
         "https://cdn.modrinth.com/data/DQIfKUHf/versions/Ui7MOgqG/styledplayerlist-3.5.1%2B1.21.jar"
       ],
       "fileSize": 364685
+    },
+    {
+      "path": "mods/timeoutout-1.0.4+1.20.2.jar",
+      "hashes": {
+        "sha1": "1ad6937d4c590dfa14247295fe47f8ddf0643b07",
+        "sha512": "616a29f085fb7e151f02a7209ffd80d4d74e7341a9a23fa1a897d3221a00cb990fe4d7ebc0892b0a8c2a9eeac84fffd888076519d65529bcb34be53410928eda"
+      },
+      "env": {
+        "client": "required",
+        "server": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/7cFX55fD/versions/VAYNN78f/timeoutout-1.0.4%2B1.20.2.jar"
+      ],
+      "fileSize": 9342
     }
   ],
   "dependencies": {

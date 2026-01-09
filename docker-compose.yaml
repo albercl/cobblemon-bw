@@ -7,10 +7,11 @@ services:
     environment:
       EULA: "TRUE"
       MOTD: "§e§l§oPokémon §8§lBlack §r§f& §f§lWhite §r§7"
+      SPAWN_PROTECTION: 0
 
       TYPE: MODRINTH
       MODRINTH_MODPACK: /server.mrpack
-      MEMORY: 5500M
+      MEMORY: 12G
 
       ENABLE_RCON: "true"
       RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
@@ -29,8 +30,9 @@ services:
       - server
     environment:
       # Programación del backup (cron)
-      BACKUP_INTERVAL: "48h"
       BACKUP_METHOD: "tar"
+      CRON_SCHEDULE: "0 8 * * *"
+      CRON_BACKUP_UID: "1000"
 
       # RCON
       RCON_HOST: server
@@ -50,4 +52,6 @@ services:
       - ./data:/data:ro
       - ~/.ssh/id_ed25519:/root/.ssh/id_ed25519:ro
       - ./post-backup.sh:/post-backup.sh:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     restart: unless-stopped
