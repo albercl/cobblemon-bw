@@ -1294,6 +1294,81 @@
         "https://cdn.modrinth.com/data/7cFX55fD/versions/VAYNN78f/timeoutout-1.0.4%2B1.20.2.jar"
       ],
       "fileSize": 9342
+    },
+    {
+      "path": "mods/worldedit-mod-7.3.8.jar",
+      "hashes": {
+        "sha512": "e039492df0b486e7ce76d0eaf8cb11eadad2e78220600b8498ab8eef4642a29e310a6bcb4378257553b3639c6d0bc1ebf0f73df3a7a677c6af6baf86716b0bc7",
+        "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250"
+      },
+      "env": {
+        "client": "required",
+        "server": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/1u6JkXh5/versions/WTAFvuRx/worldedit-mod-7.3.8.jar"
+      ],
+      "fileSize": 6222854
+    },
+    {
+      "path": "mods/disconnect-packet-fix-fabric-2.0.0.jar",
+      "hashes": {
+        "sha1": "2ba7d25b312c09b4b1ad821b42526b8b33652740",
+        "sha512": "1fd6f09a41ce36284e1a8e9def53f3f6834d7201e69e54e24933be56445ba569fbc26278f28300d36926ba92db6f4f9c0ae245d23576aaa790530345587316db"
+      },
+      "env": {
+        "server": "required",
+        "client": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/rd9rKuJT/versions/Gv74xveQ/disconnect-packet-fix-fabric-2.0.0.jar"
+      ],
+      "fileSize": 8703
+    },
+    {
+      "path": "mods/vanilla-permissions-0.3.3+1.21.1.jar",
+      "hashes": {
+        "sha512": "8fbbe41b0c0e135fe917b624dbc825f8c6802136be006936e6f7fa1b9d56e96252a98eb1c2c9a7063b9ee182b27437eb8d9f57a1fabf9972b5bc2de878d8e4b1",
+        "sha1": "0f03bc587452f132d5139b7864d47e248cf82ec3"
+      },
+      "env": {
+        "server": "required",
+        "client": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/fdZkP5Bb/versions/AReshRra/vanilla-permissions-0.3.3%2B1.21.1.jar"
+      ],
+      "fileSize": 92113
+    },
+    {
+      "path": "mods/flan-1.21.1-1.12.5-fabric.jar",
+      "hashes": {
+        "sha1": "16c7bf82b6ddff97bc1a7023155997b537f98c0b",
+        "sha512": "21eeae558346172f02c4569c39e73713305e637555f163cf875f3cb84ee4688cb0a2d92cc9c767c96c70405f7b788911bc55f42f44eedae57f84b04d16129052"
+      },
+      "env": {
+        "server": "required",
+        "client": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/Si383TIH/versions/b5UMLaHO/flan-1.21.1-1.12.5-fabric.jar"
+      ],
+      "fileSize": 925382
+    },
+    {
+      "path": "mods/InvView-1.4.15-1.20.5+.jar",
+      "hashes": {
+        "sha512": "48c2c19f13d09e0859583becf6eb2a9cbd03b85f1cd5dc44288687219d4fa3a11dbd14bfcd9ba5e8035a7ff541170c90489005b29aaa22e6c21a5ec62a761165",
+        "sha1": "c5b197a960c69a8527f5832699fb9c1c2f88c318"
+      },
+      "env": {
+        "server": "required",
+        "client": "required"
+      },
+      "downloads": [
+        "https://cdn.modrinth.com/data/jrDKjZP7/versions/LNGVFn7g/InvView-1.4.15-1.20.5%2B.jar"
+      ],
+      "fileSize": 161830
     }
   ],
   "dependencies": {
