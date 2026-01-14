@@ -14,8 +14,10 @@ services:
       MEMORY: 12G
 
       ENABLE_RCON: "true"
+      ENFORCE_SECURE_PROFILE: "false"
       RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
       RCON_PORT: 25575
+      ALLOW_FLIGHT: "true"
 
     volumes:
       - ./data:/data
@@ -25,33 +27,23 @@ services:
       - "24454:24454/udp"
 
   backup:
-    image: itzg/mc-backup
+    image: cobblemon-bw-backup:latest
+    restart: on-failure
+    build: 
+      context: ./backup
     depends_on:
       - server
     environment:
-      # Programación del backup (cron)
-      BACKUP_METHOD: "tar"
-      CRON_SCHEDULE: "0 8 * * *"
-      CRON_BACKUP_UID: "1000"
-
       # RCON
-      RCON_HOST: server
+      RCON_HOST: server:25575
       RCON_PORT: 25575
       RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
 
-      # Retención (opcional)
-      PRUNE_BACKUPS_DAYS: 14
-
-      POST_BACKUP_SCRIPT_FILE: /post-backup.sh
-
       SSH_USER: albercl
       SSH_HOST: nas.albercl.dev
-      SSH_PATH: /home/backups/cobblemon-bw
+      SSH_PATH: ~/backups/cobblemon-bw
 
     volumes:
       - ./data:/data:ro
-      - ~/.ssh/id_ed25519:/root/.ssh/id_ed25519:ro
-      - ./post-backup.sh:/post-backup.sh:ro
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-    restart: unless-stopped
+      - ~/.ssh/id_ed25519:/root/.ssh/id:ro
+  
