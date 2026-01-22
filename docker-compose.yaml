@@ -23,8 +23,74 @@ services:
       - ./data:/data
       - ./server.mrpack:/server.mrpack:ro
     ports:
-      - "25565:25565/tcp"
       - "24454:24454/udp"
+
+  server-creative:
+    image: itzg/minecraft-server:java21-alpine
+    pull_policy: daily
+    tty: true
+    stdin_open: true
+    environment:
+      EULA: "TRUE"
+      MOTD: "§e§l§oPokémon §8§lBlack §r§f& §f§lWhite §r§7"
+      SPAWN_PROTECTION: 0
+
+      TYPE: MODRINTH
+      MODRINTH_MODPACK: /server.mrpack
+      MEMORY: 4G
+
+      ENABLE_RCON: "true"
+      ENFORCE_SECURE_PROFILE: "false"
+      RCON_PASSWORD: "${RCON_PASSWORD:-minecraft}"
+      RCON_PORT: 25575
+      ALLOW_FLIGHT: "true"
+      LEVEL_TYPE: FLAT
+      VIEW_DISTANCE: 8
+      MAX_PLAYERS: 5
+      MAX_WORLD_SIZE: 10000
+      GENERATE_STRUCTURES: "false"
+      SPAWN_ANIMALS: "false"
+      SPAWN_MONSTERS: "false"
+      GAMEMODE: "creative"
+      FORCE_GAMEMODE: "true"
+      MODE: "creative"
+
+    ports:
+      - "24455:24455/udp"
+
+    volumes:
+      - ./data-creative:/data
+      - ./server-creative.mrpack:/server.mrpack:ro
+
+  proxy-online:
+    image: itzg/mc-proxy:java21
+    restart: unless-stopped
+    environment:
+      TYPE: VELOCITY
+      PREVIEW_PING_PROTOCOL: "true"
+      FORCE_KEY_AUTH: "false"
+      JVM_OPTS: "-Dvelocity.packet-decode-logging=true"
+    ports:
+      - "25577:25577"
+    volumes:
+      - ./proxy/velocity-online.toml:/config/velocity.toml:ro
+      - ./proxy/forwarding.secret:/config/forwarding.secret:ro
+      - proxy-online-data:/server
+
+  proxy-offline:
+    image: itzg/mc-proxy:java21
+    restart: unless-stopped
+    environment:
+      TYPE: VELOCITY
+      PREVIEW_PING_PROTOCOL: "true"
+      FORCE_KEY_AUTH: "false"
+      JVM_OPTS: "-Dvelocity.packet-decode-logging=true"
+    ports:
+      - "25578:25578"
+    volumes:
+      - ./proxy/velocity-offline.toml:/config/velocity.toml:ro
+      - ./proxy/forwarding.secret:/config/forwarding.secret:ro
+      - proxy-offline-data:/server
 
   backup:
     image: cobblemon-bw-backup:latest
@@ -46,4 +112,8 @@ services:
     volumes:
       - ./data:/data:ro
       - ~/.ssh/id_ed25519:/root/.ssh/id:ro
-  
+
+volumes:
+  proxy-online-data:
+  proxy-offline-data:
+  proxy-test-data:

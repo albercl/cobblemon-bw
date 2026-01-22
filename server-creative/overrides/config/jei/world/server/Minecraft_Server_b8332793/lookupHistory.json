@@ -1,0 +1,6 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"legendarymonuments:distortion_portal"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"legendarymonuments:origin_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"legendarymonuments:arc_phone"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]
